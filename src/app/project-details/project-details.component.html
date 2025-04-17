@@ -1,0 +1,79 @@
+<div class="container mt-5">
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+
+  <div *ngIf="project; else loading">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h3>{{ project.title }}</h3>
+      </div>
+      <div class="card-body">
+        <div *ngIf="!isEditing">
+          <p><strong>Details:</strong> {{ project.details }}</p>
+          <p><strong>Total Target:</strong> {{ project.total_target }} USD</p>
+          <p><strong>Start Date:</strong> {{ project.start_time | date }}</p>
+          <p><strong>End Date:</strong> {{ project.end_time | date }}</p>
+          <p><strong>Created By:</strong> {{ project.user?.username }}</p>
+          <button
+            *ngIf="canEdit()"
+            class="btn btn-warning"
+            (click)="toggleEdit()"
+          >
+            Edit
+          </button>
+        </div>
+
+        <div *ngIf="isEditing">
+          <form (ngSubmit)="saveChanges()">
+            <div class="form-group">
+              <label for="title">Project Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="title"
+                [(ngModel)]="project.title"
+                name="title"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="details">Details</label>
+              <textarea
+                class="form-control"
+                id="details"
+                [(ngModel)]="project.details"
+                name="details"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="total_target">Total Target (in USD)</label>
+              <input
+                type="number"
+                class="form-control"
+                id="total_target"
+                [(ngModel)]="project.total_target"
+                name="total_target"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-success">Save Changes</button>
+            <button
+              type="button"
+              class="btn btn-secondary ml-2"
+              (click)="toggleEdit()"
+            >
+              Cancel
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <div class="alert alert-info">Loading project details...</div>
+  </ng-template>
+</div>

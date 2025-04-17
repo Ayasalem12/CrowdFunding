@@ -1,0 +1,114 @@
+.container {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+textarea.form-control {
+  height: 100px;
+}
+
+.card-header {
+  font-weight: bold;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  margin-bottom: 5px;
+}
+
+.alert {
+  margin-bottom: 20px;
+}
+
+.btn-info, .btn-danger {
+  margin-right: 5px;
+}
+
+h2, h3 {
+  color: #333;
+}
+
+.card {
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.project-card {
+  border: none;
+}
+
+.project-card .card-body {
+  border-radius: 5px;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+  border-color: #138496;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #c82333;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #218838;
+}
+
+.mb-3 .form-control {
+  border: 2px solid #007bff;
+  transition: border-color 0.3s;
+}
+
+.mb-3 .form-control:focus {
+  border-color: #0056b3;
+}
+
+.project-card.bg-primary {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+.project-card.bg-success {
+  background: linear-gradient(135deg, #28a745, #218838);
+}
+
+.project-card.bg-warning {
+  background: linear-gradient(135deg, #ffc107, #e0a800);
+}
+
+.project-card.bg-danger {
+  background: linear-gradient(135deg, #dc3545, #c82333);
+}
+
+.project-card.bg-info {
+  background: linear-gradient(135deg, #17a2b8, #138496);
+}

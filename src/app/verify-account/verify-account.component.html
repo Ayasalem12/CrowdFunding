@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <h2>Verify Account</h2>
+  <div *ngIf="message" class="alert alert-success">{{ message }}</div>
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Verify Account</button>
+  </form>
+</div>
